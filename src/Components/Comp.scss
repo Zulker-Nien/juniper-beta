@@ -1,0 +1,336 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  height: 80vh;
+  button {
+    height: 15vh !important;
+    width: 100% !important;
+  }
+  @media only screen and (max-width: 900px) {
+    width: 90vw;
+  }
+}
+
+.PhoneInputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #f0f8ff;
+  margin: 10px 0 0 0;
+  padding: 0;
+  height: 55%;
+
+  @media only screen and (max-width: 900px) {
+    height: 70vh;
+  }
+  input {
+    width: 30vw;
+    height: 8vh;
+    background-color: transparent;
+    border: 1px solid #f0f8ff;
+    border-radius: 0 0 10px 10px;
+    @media only screen and (max-width: 900px) {
+      width: 86vw;
+    }
+  }
+  .PhoneInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 0;
+    padding: 0;
+    height: 70vh;
+    @media only screen and (max-width: 900px) {
+      height: 15vh;
+    }
+    input {
+      width: 26vw;
+      height: 15vh;
+      background-color: transparent;
+      border: 1px solid #f0f8ff;
+      border-radius: 0 0 10px 10px;
+      @media only screen and (max-width: 900px) {
+        width: 80vw;
+      }
+    }
+  }
+
+  .PhoneInputCountry {
+    border-radius: 10px 10px 0 0;
+    height: 7vh;
+    border: 1px solid #f0f8ff;
+    width: 30vw;
+    margin: 0 50px;
+    padding: 0;
+    border-bottom: 0px;
+    @media only screen and (max-width: 900px) {
+      width: 84vw;
+      margin: 0 0px;
+    }
+    // background-color: #f0f8ff;
+  }
+  .PhoneInputInput::placeholder {
+    color: #f0f8ff;
+    // height: 8vh;
+    font-size: 15px;
+    opacity: 0.6;
+  }
+  .PhoneInputInput {
+    // border: 1px solid red;
+    height: 12vh;
+    margin: 0;
+    padding: 0 2vw;
+    color: #f0f8ff;
+    background-color: #a76b5f;
+  }
+  .PhoneInputCountryIcon {
+    padding-left: 8%;
+    height: 60%;
+    width: 80%;
+  }
+  .PhoneInputCountryIcon img {
+    height: 100%;
+    width: 10%;
+    background-color: transparent;
+    border: 0px;
+  }
+  .PhoneInputCountrySelect {
+    background-color: #f0f8ff;
+  }
+  .PhoneInputCountryIcon--border {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .PhoneInputCountrySelectArrow {
+    margin-left: 5%;
+  }
+}
+.password {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30vw;
+  align-self: center;
+  margin-top: 20px;
+  border: 1px solid #f0f8ff;
+  border-radius: 10px;
+  @media only screen and (max-width: 900px) {
+    width: 85vw;
+  }
+
+  input {
+    width: 80%;
+    padding: 0 2vw;
+    height: 7vh;
+    background-color: transparent;
+    border: 0;
+    text-decoration: none;
+    color: #f0f8ff;
+    @media only screen and (max-width: 900px) {
+      width: 80vw;
+      font-size: 1.5rem;
+    }
+  }
+  p {
+    font-size: 15px;
+    width: 6vw;
+    padding: 0 1vw;
+    cursor: pointer;
+    color: #339b97;
+    @media only screen and (max-width: 900px) {
+      width: 20vw;
+      height: 30%;
+    }
+  }
+}
+.capturePassword {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+
+  p {
+    font-size: 15px;
+  }
+  .rememberMe {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    input[type="checkbox"] {
+      border-radius: 10px;
+      border: 1px solid #a76b5f;
+      width: 20px;
+      margin: 0 2px 0 0;
+      padding: 0;
+      cursor: pointer;
+    }
+  }
+  .forgotPassword {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    p {
+      color: #a76b5f;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 0vh;
+  }
+}
+.privacyPolicy {
+  text-align: justify;
+  margin-top: 10px;
+  p {
+    font-size: 100%;
+    span {
+      color: #a76b5f;
+    }
+  }
+}
+.loginSubmit {
+  // width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: transparent;
+  border: 0.1rem outset #a76b5f;
+  font-size: 15px;
+  color: #f0f8ff;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+  @media only screen and (max-width: 900px) {
+    height: 8vh !important;
+  }
+}
+.loginSubmit:hover {
+  color: #a76b5f;
+}
+.lineBreak {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  p {
+    width: 6%;
+    font-size: 15px;
+  }
+  hr {
+    height: 0px;
+    margin: 0;
+    width: 47%;
+  }
+}
+.headerContainer {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 10vh;
+  padding: 5%;
+  z-index: 2;
+
+  .logoHeader {
+    width: 50%;
+  }
+  .navMenuContainer {
+    display: flex;
+    flex-direction: column;
+    color: #f0f8ff;
+    font-family: "Jura", sans-serif;
+    width: 5%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    @media only screen and (max-width: 900px) {
+      width: 20%;
+    }
+    .hBurger {
+      height: 15%;
+      width: 100%;
+      background-color: #fafafa;
+      border-radius: 10px;
+    }
+  }
+  .sideBarContainer {
+    position: absolute;
+    height: 25vh;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    // background-color: #339b97;
+    flex-direction: column;
+    @media only screen and (max-width: 900px) {
+      height: 40vh;
+      width: 90vw;
+      margin-top: 26vh;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+      width: 20%;
+      height: 100%;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+
+      @media only screen and (max-width: 900px) {
+        width: 100%;
+        height: 100%;
+        background-color: #1c1c1c;
+      }
+      li {
+        font-family: "Jura", sans-serif;
+        font-weight: 900;
+        width: 90%;
+        height: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        border-radius: 10px;
+        background-color: #0d0d0d;
+        color: #f0f8ff;
+      }
+    }
+  }
+  .sideBarCloseButton {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    @media only screen and (max-width: 900px) {
+    }
+  }
+  .sideBarCloseButton:before,
+  .sideBarCloseButton:after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 33px;
+    width: 2px;
+    background-color: #f0f8ff;
+  }
+  .sideBarCloseButton:before {
+    transform: rotate(45deg);
+  }
+  .sideBarCloseButton:after {
+    transform: rotate(-45deg);
+  }
+}

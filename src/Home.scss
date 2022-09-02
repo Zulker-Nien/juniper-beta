@@ -1,0 +1,733 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura&display=swap");
+
+.container {
+  padding: 0 0rem;
+}
+
+.main {
+  height: 100vh;
+  overflow: hidden;
+  padding: 0rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.homeContainer {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  .t1 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    stop-color: #a76b5f;
+    animation: dash 4s linear forwards;
+    animation-iteration-count: infinite;
+  }
+  .t2 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    stop-color: #000;
+    animation: dash2 4s linear forwards;
+    animation-iteration-count: infinite;
+  }
+  .t3 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    stop-color: #7f4439;
+    animation: dash3 4s linear forwards;
+    animation-iteration-count: infinite;
+  }
+  .t4 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    stop-color: #000;
+    animation: dash4 4s linear forwards;
+    animation-iteration-count: infinite;
+  }
+  @keyframes dash {
+    0% {
+      stop-color: #a76b5f;
+    }
+    50% {
+      stop-color: #111046;
+    }
+    100% {
+      stop-color: #a76b5f;
+    }
+  }
+  @keyframes dash2 {
+    0% {
+      stop-color: #111046;
+    }
+    50% {
+      stop-color: #a76b5f;
+    }
+    100% {
+      stop-color: #111046;
+    }
+  }
+  @keyframes dash3 {
+    0% {
+      stop-color: #7f4439;
+    }
+    50% {
+      stop-color: #111046;
+    }
+    100% {
+      stop-color: #7f4439;
+    }
+  }
+  @keyframes dash4 {
+    0% {
+      stop-color: #111046;
+    }
+    50% {
+      stop-color: #7f4439;
+    }
+    100% {
+      stop-color: #111046;
+    }
+  }
+  .homeBg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+.homeCenter {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Jura", sans-serif;
+
+  h1 {
+    font-size: 2.5em;
+    color: #f0f8ff;
+    margin: 30px 0 0 0;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    color: #f0f8ff;
+    font-size: 30px;
+    margin: 20px 0 0 0;
+  }
+
+  @media screen and (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      font-size: 20px;
+      text-align: center;
+      color: #f0f8ff;
+      margin: 30px 0 20px 0;
+      letter-spacing: 12px;
+    }
+    button {
+      margin: 30px 0px 0px 0px !important;
+      width: 90vw !important;
+      height: 5vh;
+      transition: 0.3s all ease-in-out;
+      border-radius: 10px;
+      border: 2px solid #339b97;
+      background-color: #000 !important;
+      cursor: pointer;
+      h3 {
+        letter-spacing: 5px;
+        margin: 0;
+        color: #a76b5f;
+      }
+    }
+  }
+  p {
+    margin: 0;
+    color: #f0f8ff;
+  }
+  img {
+    height: 15%;
+  }
+  button {
+    margin: 10px 0px;
+    width: 22vw;
+    height: 8vh;
+    transition: 0.3s linear all;
+    border-radius: 10px;
+    border: 0.1rem outset #a76b5f;
+    background-color: transparent;
+    font-family: "Jura", sans-serif;
+    cursor: pointer;
+    h3 {
+      letter-spacing: 5px;
+      margin: 0;
+      font-size: 1em;
+      color: #f0f8ff;
+      transition: 0.3s all ease-in-out;
+    }
+  }
+  button:hover {
+    transition: 0.1s all ease-in-out;
+    // background-color:  #111046;
+    border: 0.1rem outset #a76b5f;
+    h3 {
+      // color: #f0f8ff;
+      color: #a76b5f;
+      letter-spacing: 0.3rem;
+    }
+  }
+}
+.loginContainer {
+  width: 30vw;
+  height: 80vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  h2 {
+    @media only screen and (max-width: 900px) {
+      width: 90vw;
+      font-size: 1.5rem;
+    }
+    width: 100%;
+  }
+}
+.packageContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Jura", sans-serif;
+  h1 {
+    color: #000;
+    background-color: #f0f8ff;
+    padding: 20px 20px;
+    border-radius: 10px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .packageButton button {
+    height: 8vh;
+    width: 25vw !important;
+    border-radius: 10px;
+    // width: 30%;
+    margin-top: 10px;
+    background-color: #000;
+    border: 0.1rem outset #a76b5f;
+    font-size: 15px;
+    color: #f0f8ff;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+    @media only screen and (max-width: 900px) {
+      width: 90vw !important;
+    }
+  }
+  .packageButton button:hover {
+    color: #a76b5f;
+  }
+  .mySwiper {
+    width: 70%;
+    height: 60%;
+    color: #f0f8ff;
+    background-color: transparent;
+    border-radius: 10px;
+
+    @media only screen and (max-width: 900px) {
+      width: 100%;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #f0f8ff !important;
+      margin-top: -5%;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: #7f4439 !important;
+    }
+    .swiper-pagination-bullet {
+      background-color: #f0f8ff !important;
+    }
+  }
+
+  .SwiperSlide {
+    text-align: center;
+    font-size: 18px;
+    color: #f0f8ff;
+    width: 100%;
+    height: 80%;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    @media only screen and (max-width: 900px) {
+      height: 90%;
+    }
+    .packageSlideContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      .packageSlides {
+        position: relative;
+        height: 90%;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .packageItems {
+          font-size: 1em;
+          width: 40%;
+          height: 20%;
+          color: #a76b5f;
+          // background-color: #339b97;
+
+          @media only screen and (max-width: 900px) {
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.getStartedBtn {
+  td {
+    button {
+      height: 70%;
+      width: 80%;
+      transition: 0.3s linear all;
+      border-radius: 5px;
+      border: 0.1rem outset #a76b5f !important;
+      background-color: transparent;
+      font-family: "Jura", sans-serif;
+      cursor: pointer;
+      p {
+        // letter-spacing: 5px;
+        transition: 0.3s linear all;
+        margin: 0;
+        color: #f0f8ff;
+        font-weight: 900;
+      }
+    }
+
+    button:hover {
+      transition: 0.3s linear all;
+      p {
+        color: #a76b5f;
+        transition: 0.3s linear all;
+      }
+    }
+  }
+}
+
+.cutContainer {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0a0612;
+  overflow: hidden;
+  font-family: "Jura", sans-serif;
+  .cutWrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: 2.5rem;
+      color: #f0f8ff;
+    }
+    .cutCardContainer {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      column-gap: 50px;
+      .cutCardItem {
+        height: 40vh;
+        width: 20vw;
+        border: 1px solid #f0f8ff;
+        border-radius: 10px;
+        transition: 0.3s all ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #f0f8ff;
+        cursor: pointer;
+        .CutImage {
+          transition: 0.4s all ease-in-out;
+
+          img {
+            transition: 0.1s all ease-out;
+          }
+        }
+      }
+
+      .cutCardItemSelected {
+        background-color: #f0f8ff;
+        height: 40vh;
+        width: 20vw;
+        border: 1px solid #f0f8ff;
+        border-radius: 10px;
+        transition: 0.3s all ease-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #a76b5f;
+        cursor: pointer;
+      }
+      .cutCardItem:hover {
+        transition: 0.1s all ease-out;
+        .CutImage {
+          transition: 0.1s all ease-out;
+          width: 50%;
+          img {
+            transition: 0.1s all ease-out;
+          }
+        }
+      }
+      #disabledDiv {
+        pointer-events: none;
+        opacity: 0.4;
+      }
+    }
+    .CutButton {
+      margin-top: 10vh;
+      height: 10vh;
+      width: 20vw;
+      transition: 0.3s all ease-in-out;
+      border-radius: 5px;
+      border: 0.1rem outset #a76b5f !important;
+      background-color: transparent;
+      font-family: "Jura", sans-serif;
+      cursor: pointer;
+      p {
+        margin: 0;
+        color: #f0f8ff;
+        font-weight: 900;
+
+        transition: 0.3s all ease-in-out;
+      }
+    }
+    .CutButton:hover {
+      // font-size: 1rem;
+      transition: 0.3s all ease-in-out;
+      p {
+        color: #a76b5f;
+        transition: 0.3s all ease-in-out;
+      }
+    }
+  }
+}
+
+.colorContainer {
+  background-color: #0a0612;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  transition: 0.3s all ease-out;
+  .colorWrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all ease-out;
+    h1 {
+      font-size: 2.5rem;
+      color: #f0f8ff;
+      font-family: "Jura", sans-serif;
+      @media only screen and (max-width: 900px) {
+        font-size: 1.5rem;
+      }
+    }
+    .circleContainer {
+      @media only screen and (max-width: 900px) {
+        height: 40%;
+        display: grid;
+        grid-template-columns: auto auto;
+      }
+      align-self: center;
+      justify-content: space-around;
+      width: 40%;
+      height: 15%;
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto auto auto;
+      column-gap: 5px;
+      transition: 0.3s all ease-out;
+      .circle {
+        width: 50px;
+        height: 50px;
+        background-color: #202157;
+        border-radius: 50% 50% 50% 50%;
+        border: 1px solid #f0f8ff;
+        cursor: pointer;
+        transition: 0.1s all ease-out;
+      }
+      .cutCircleSelected {
+        width: 50px;
+        height: 100px;
+        background-color: #202157;
+        border-radius: 40px 40px 40px 40px;
+        border: 1px solid #f0f8ff;
+        cursor: pointer;
+        transition: 0.3s all ease-out;
+      }
+    }
+    .buttonContainer {
+      @media only screen and (max-width: 900px) {
+        width: 90%;
+      }
+      .ColorButton {
+        // margin-top: 10vh;
+        height: 10vh;
+        width: 20vw;
+        transition: 0.3s all ease-in-out;
+        border-radius: 5px;
+        border: 0.1rem outset #a76b5f !important;
+        background-color: transparent;
+        font-family: "Jura", sans-serif;
+        cursor: pointer;
+
+        @media only screen and (max-width: 900px) {
+          width: 100%;
+        }
+
+        p {
+          margin: 0;
+          color: #f0f8ff;
+          font-weight: 900;
+          transition: 0.3s linear all;
+        }
+      }
+    }
+    .ColorButton:hover {
+      transition: 0.1s all ease-in-out;
+      p {
+        color: #a76b5f;
+        transition: 0.3s linear all;
+      }
+    }
+  }
+}
+
+.garmentContainer {
+  position: relative;
+  background-color: #0a0612;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: "Jura", sans-serif;
+  .garmentWrapper {
+    background-color: #0a0612;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    @media only screen and (max-width: 900px) {
+      margin-top: 12vh;
+      width: 100%;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #f0f8ff;
+    }
+    .garmentCardContainer {
+      position: relative;
+      display: flex;
+      @media only screen and (max-width: 900px) {
+        flex-direction: column;
+        height: 60%;
+        width: 90%;
+      }
+      .GarmentCardItem {
+        height: 40vh;
+        width: 20vw;
+        margin: 0 5px;
+        border: 1px solid #f0f8ff;
+        border-radius: 10px;
+        transition: 0.3s all ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #a76b5f;
+        cursor: pointer;
+
+        @media only screen and (max-width: 900px) {
+          height: 100%;
+          margin-bottom: 5px;
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+      .GarmentCardItemSelected {
+        background-color: #f0f8ff;
+        height: 40vh;
+        width: 20vw;
+        margin: 0 5px;
+        border: 1px solid #f0f8ff;
+        border-radius: 10px;
+        transition: 0.3s all ease-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #a76b5f;
+        cursor: pointer;
+
+        @media only screen and (max-width: 900px) {
+          width: 100%;
+          height: 40%;
+          margin-bottom: 5px;
+          margin-left: 0;
+          margin-right: 0;
+        }
+        .cutCardItem:hover {
+          transition: 0.1s all ease-out;
+        }
+      }
+    }
+    .GarmentButton {
+      // margin-top: 10vh;
+      margin: 5px;
+      height: 10vh;
+      width: 20vw;
+      transition: 0.3s all ease-in-out;
+      border-radius: 5px;
+      border: 0.1rem outset #a76b5f !important;
+      background-color: transparent;
+      font-family: "Jura", sans-serif;
+      cursor: pointer;
+      p {
+        margin: 0;
+        color: #f0f8ff;
+        font-weight: 900;
+        transition: 0.3s linear all;
+      }
+
+      @media only screen and (max-width: 900px) {
+        width: 90vw;
+      }
+    }
+
+    .GarmentButton:hover {
+      transition: 0.3s all ease-in-out;
+      p {
+        color: #a76b5f;
+        transition: 0.3s linear all;
+      }
+    }
+  }
+}
+
+.InterractiveContainer {
+  height: 100vh;
+  width: 100vw;
+  // background-color: #f0f8ff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  .interractiveBG {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .modelContainer {
+    margin: auto;
+    height: 100vh;
+    width: 40vw;
+    @media only screen and (max-width: 900px) {
+      width: 100vw;
+    }
+  }
+  .controlContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    // background-color: #fff;
+    color: #7f4439;
+    font-size: 1rem;
+    height: 40vh;
+    bottom: 25vh;
+    width: 25vw;
+    left: 0;
+    @media only screen and (max-width: 900px) {
+      font-size: 1rem;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      bottom: 0;
+      height: 10vh;
+      width: 100%;
+      display: flex;
+    }
+    .controlButton {
+      font-family: "Jura", sans-serif;
+      text-align: center;
+      border: 1px solid #a76b5f;
+      width: 25%;
+      cursor: pointer;
+      transition: 0.2s linear all;
+      padding: 2% 5%;
+      @media only screen and (max-width: 900px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0%;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .controlButtonClicked {
+      font-family: "Jura", sans-serif;
+      background-color: #7f4439;
+      text-align: center;
+      border: 1px solid #a76b5f;
+      color: #f0f8ff;
+      transition: 0.2s linear all;
+      width: 25%;
+      cursor: pointer;
+      padding: 2% 5%;
+      @media only screen and (max-width: 900px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0%;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
