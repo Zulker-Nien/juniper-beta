@@ -41,10 +41,21 @@ class Store {
   setLoader = () => {
     this.loader = !this.loader;
   }
+
   setValue = ()=>{
     this.value = this.value
   }
-
+  
+  
+  
+  torso = ""
+  sleeves = ""
+  setTorso = (torso:string) => {
+    this.torso = torso
+  }
+  setSleeves = (sleeves:string) => {
+    this.sleeves = sleeves
+  }
 
 }
 export default createContext(new Store());

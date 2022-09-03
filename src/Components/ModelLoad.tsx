@@ -16,7 +16,8 @@ const ModelLoad = (props: any) => {
     isTabletOrMobile ? (tension = 0) : (tension = 100);
   }
   const store = useContext(Store);
-  const { color, layer } = store;
+  const { color, layer, torso, sleeves } = store;
+
   const { scene } = useGLTF("PoloShirt.glb");
   console.log(scene);
   const ref = useRef<any>();
@@ -37,7 +38,7 @@ const ModelLoad = (props: any) => {
     side: 2,
   });
   let Sleeves = new MeshStandardMaterial({
-    color: color,
+    color: sleeves,
     alphaToCoverage: true,
     clipIntersection: true,
     clipShadows: true,
@@ -46,7 +47,7 @@ const ModelLoad = (props: any) => {
   });
 
   let Torso = new MeshStandardMaterial({
-    color: color,
+    color: torso,
     alphaToCoverage: true,
     clipIntersection: true,
     clipShadows: true,

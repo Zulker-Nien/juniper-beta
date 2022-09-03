@@ -9,7 +9,7 @@ import "../Home.scss";
 import Store from "../store";
 import { observer } from "mobx-react-lite";
 const Customize = () => {
-  const Color = [
+  const Color: string[] = [
     "#B8B4AB",
     "#082242",
     "#740232",
@@ -23,10 +23,19 @@ const Customize = () => {
   const [selected, setSelected] = useState<any>();
   const [showColors, setShowColors] = useState<any>();
   const store = useContext(Store);
-  const { setColor, setSelectLayer, layerClicked, setLayerClicked } = store;
+  const {
+    setColor,
+    setSelectLayer,
+    layerClicked,
+    setLayerClicked,
+    setTorso,
+    setSleeves,
+    layer,
+  } = store;
 
   const [controlClicked, setControlClicked] = useState<number>(0);
   const [showColorLayer, setShowColorLayer] = useState<boolean>(false);
+
   return (
     <div className="InterractiveContainer">
       <Header />
@@ -137,6 +146,7 @@ const Customize = () => {
         </Suspense>
       </div>
       <div className="controlContainer">
+        {/* THIS IS FOR THE PATTERNS */}
         <div
           className={
             controlClicked === 1 ? "controlButtonClicked" : "controlButton"
@@ -144,12 +154,13 @@ const Customize = () => {
           onClick={() => {
             setControlClicked(1);
             setShowColorLayer(false);
-
             setShowColors(false);
           }}
         >
           Patterns
         </div>
+
+        {/* THIS IS FOR THE COLORS */}
         <div
           className={
             controlClicked === 2 ? "controlButtonClicked" : "controlButton"
@@ -157,10 +168,13 @@ const Customize = () => {
           onClick={() => {
             setControlClicked(2);
             setShowColorLayer(!showColorLayer);
+            setShowColors(!showColors);
           }}
         >
           Color
         </div>
+
+        {/* THIS IS FOR THE LOGOS */}
         <div
           className={
             controlClicked === 3 ? "controlButtonClicked" : "controlButton"
@@ -176,6 +190,7 @@ const Customize = () => {
       </div>
       {showColorLayer && (
         <div className="colorLayer">
+          {/* THIS IS FOR THE TORSO */}
           <div
             className={
               layerClicked === 1
@@ -190,6 +205,8 @@ const Customize = () => {
           >
             <p>Torso</p>
           </div>
+
+          {/* THIS IS FOR THE SLEEVES */}
           <div
             className={
               layerClicked === 2
@@ -226,6 +243,12 @@ const Customize = () => {
                     onClick={() => {
                       setSelected(index);
                       setColor(item);
+                      {
+                        layer === "Torso" && setTorso(item);
+                      }
+                      {
+                        layer === "Sleeves" && setSleeves(item);
+                      }
                     }}
                   />
                 );
