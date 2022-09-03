@@ -12,19 +12,25 @@ class Store {
   value = "";
   color = "#ffffff";
   drawer = false;
+  layer = "";
+  layerClicked = 0;
 
+  setSelectLayer = (layer:string) => {
+    this.layer = layer
+  }
   setShow = () => {
     this.show = !this.show;
   };
-
   setDrawer = () => {
     this.drawer = true
   }
-
   closeDrawer = () => {
     if(this.drawer === true){
       this.drawer = false
     }
+  }
+  setLayerClicked =(layerClicked:number) => {
+    this.layerClicked = layerClicked
   }
   setColor = (color:string) => {
     this.color = color

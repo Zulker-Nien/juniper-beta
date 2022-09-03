@@ -147,6 +147,7 @@
   }
   p {
     margin: 0;
+    text-align: center;
     color: #f0f8ff;
   }
   img {
@@ -678,6 +679,7 @@
     justify-content: space-evenly;
     // background-color: #fff;
     color: #7f4439;
+    z-index: 1;
     font-size: 1rem;
     height: 40vh;
     bottom: 25vh;
@@ -727,6 +729,94 @@
         padding: 0%;
         height: 100%;
         width: 100%;
+      }
+    }
+  }
+  .colorLayer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    color: #7f4439;
+    bottom: 15%;
+    font-size: 1rem;
+    height: 60vh;
+    width: 10vw;
+    left: 26vw;
+    transition: 0.5s ease-in-out all;
+    // background-color: #339b97;
+    .colorLayerButton {
+      height: 10%;
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #7f4439;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .colorLayerButtonClicked {
+      background-color: #7f4439;
+      border: 2px solid #7f4439;
+      color: #f0f8ff;
+      height: 10%;
+      width: 100%;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    :hover {
+      background-color: #7f4439;
+      transition: 0.3s ease-in-out all;
+      cursor: pointer;
+      color: #f0f8ff;
+    }
+  }
+  .showColorContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    color: #7f4439;
+    bottom: 15%;
+    font-size: 1rem;
+    height: 60vh;
+    width: 10vw;
+    right: 26vw;
+    // background-color: #000;
+    .circleContainer {
+      @media only screen and (max-width: 900px) {
+        height: 40%;
+        display: grid;
+        grid-template-columns: auto auto;
+      }
+      align-self: center;
+      justify-content: space-around;
+      width: 40%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto auto auto auto auto auto auto auto;
+      column-gap: 5px;
+      transition: 0.3s all ease-out;
+      .circle {
+        width: 50px;
+        height: 50px;
+        background-color: #202157;
+        border-radius: 50% 50% 50% 50%;
+        border: 1px solid #f0f8ff;
+        cursor: pointer;
+        transition: 0.1s all ease-out;
+      }
+      .cutCircleSelected {
+        width: 50px;
+        height: 100px;
+        background-color: #202157;
+        border-radius: 40px 40px 40px 40px;
+        border: 1px solid #f0f8ff;
+        cursor: pointer;
+        transition: 0.3s all ease-out;
       }
     }
   }

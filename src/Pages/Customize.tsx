@@ -1,12 +1,32 @@
 import { ContactShadows } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useState } from "react";
+import { Suspense, useState, useContext } from "react";
 import Header from "../Components/Header";
+import { Tween } from "react-gsap";
 import SvgComponent from "../Components/LandingBg";
 import ModelLoad from "../Components/ModelLoad";
 import "../Home.scss";
+import Store from "../store";
+import { observer } from "mobx-react-lite";
 const Customize = () => {
-  const [controlClicked, setControlClicked] = useState(0);
+  const Color = [
+    "#B8B4AB",
+    "#082242",
+    "#740232",
+    "#FEEA01",
+    "#009748",
+    "#B0D9F4",
+    "#FFFFFF",
+    "#0E090C",
+  ];
+
+  const [selected, setSelected] = useState<any>();
+  const [showColors, setShowColors] = useState<any>();
+  const store = useContext(Store);
+  const { setColor, setSelectLayer, layerClicked, setLayerClicked } = store;
+
+  const [controlClicked, setControlClicked] = useState<number>(0);
+  const [showColorLayer, setShowColorLayer] = useState<boolean>(false);
   return (
     <div className="InterractiveContainer">
       <Header />
@@ -123,6 +143,9 @@ const Customize = () => {
           }
           onClick={() => {
             setControlClicked(1);
+            setShowColorLayer(false);
+
+            setShowColors(false);
           }}
         >
           Patterns
@@ -133,6 +156,7 @@ const Customize = () => {
           }
           onClick={() => {
             setControlClicked(2);
+            setShowColorLayer(!showColorLayer);
           }}
         >
           Color
@@ -143,13 +167,75 @@ const Customize = () => {
           }
           onClick={() => {
             setControlClicked(3);
+            setShowColorLayer(false);
+            setShowColors(false);
           }}
         >
           Logos
         </div>
       </div>
+      {showColorLayer && (
+        <div className="colorLayer">
+          <div
+            className={
+              layerClicked === 1
+                ? "colorLayerButtonClicked"
+                : "colorLayerButton"
+            }
+            onClick={() => {
+              setShowColors(true);
+              setSelectLayer("Torso");
+              setLayerClicked(1);
+            }}
+          >
+            <p>Torso</p>
+          </div>
+          <div
+            className={
+              layerClicked === 2
+                ? "colorLayerButtonClicked"
+                : "colorLayerButton"
+            }
+            onClick={() => {
+              setShowColors(true);
+              setSelectLayer("Sleeves");
+              setLayerClicked(2);
+            }}
+          >
+            <p>Sleeves</p>
+          </div>
+        </div>
+      )}
+      {showColors && (
+        <div className="showColorContainer">
+          <div className="circleContainer">
+            <Tween
+              from={{ y: "-200px" }}
+              to={{ y: "0px" }}
+              stagger={0.03}
+              ease="elastic.out(0.2, 0.1)"
+            >
+              {Color.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={
+                      selected === index ? "cutCircleSelected" : "circle"
+                    }
+                    style={{ backgroundColor: `${item}` }}
+                    onClick={() => {
+                      setSelected(index);
+                      setColor(item);
+                    }}
+                  />
+                );
+              })}
+            </Tween>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default Customize;
+export default observer(Customize);

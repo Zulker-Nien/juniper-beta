@@ -1,18 +1,9 @@
-import {
-  OrbitControls,
-  PresentationControls,
-  useGLTF,
-} from "@react-three/drei";
+import { PresentationControls, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useRef } from "react";
 import Store from "../store";
 import { useMediaQuery } from "react-responsive";
-import THREE, {
-  MeshStandardMaterial,
-  MeshPhongMaterial,
-  MeshBasicMaterial,
-  DoubleSide,
-} from "three";
+import { MeshStandardMaterial } from "three";
 
 const ModelLoad = (props: any) => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
@@ -25,7 +16,7 @@ const ModelLoad = (props: any) => {
     isTabletOrMobile ? (tension = 0) : (tension = 100);
   }
   const store = useContext(Store);
-  const { color } = store;
+  const { color, layer } = store;
   const { scene } = useGLTF("PoloShirt.glb");
   console.log(scene);
   const ref = useRef<any>();
@@ -37,7 +28,24 @@ const ModelLoad = (props: any) => {
     ref.current.position.y = (1 + Math.sin(t / 1.5)) / 10;
   });
 
-  let coloronly = new MeshStandardMaterial({
+  let testColor = new MeshStandardMaterial({
+    color: color,
+    alphaToCoverage: true,
+    clipIntersection: true,
+    clipShadows: true,
+    emissiveIntensity: 0,
+    side: 2,
+  });
+  let Sleeves = new MeshStandardMaterial({
+    color: color,
+    alphaToCoverage: true,
+    clipIntersection: true,
+    clipShadows: true,
+    emissiveIntensity: 0,
+    side: 2,
+  });
+
+  let Torso = new MeshStandardMaterial({
     color: color,
     alphaToCoverage: true,
     clipIntersection: true,
@@ -47,17 +55,19 @@ const ModelLoad = (props: any) => {
   });
 
   const modelParts = [
-    // { childID: "trial_13_1", mtl: coloronly },
+    // Sleeves
+    { childID: `${layer == "Sleeves" && "trial_13_1"}`, mtl: Sleeves },
     // { childID: "trial_13_2", mtl: coloronly },
-    // { childID: "trial_13_3", mtl: coloronly },
-    { childID: "trial_13_4", mtl: coloronly },
+    // { childID: "trial_13_3", mtl: testColor },
+    // Torso
+    { childID: `${layer == "Torso" && "trial_13_4"}`, mtl: Torso },
     // { childID: "trial_13_5", mtl: coloronly },
     // { childID: "trial_13_6", mtl: coloronly },
     // { childID: "trial_13_7", mtl: coloronly },
     // { childID: "trial_13_8", mtl: coloronly },
     // { childID: "trial_13_9", mtl: coloronly },
     // { childID: "trial_13_10", mtl: coloronly },
-    // { childID: "trial_13_11", mtl: coloronly },
+    { childID: "trial_13_11", mtl: testColor },
   ];
 
   const mapColor = (parent: any, type: any, mtl: any) => {
